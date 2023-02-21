@@ -1,13 +1,28 @@
-#include <unistd.h>
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * main - entry point
+ * Description: prints  if a number is positive or negative.
+ * Return: 0
  */
-int _putchar(char c)
+int main(void)
 {
-	return (write(1, &c, 1));
+	int n;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	if (n > 0)
+	{
+		printf("%d is positive\n", n);
+	}
+	else if (n == 0)
+	{
+		printf("%d is zero\n", n);
+	}
+	else if (n < 0)
+	{
+		printf("%d is negative\n", n);
+	}
+	return (0);
 }
